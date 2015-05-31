@@ -2,6 +2,7 @@ $:.unshift("lib")
 
 require "bundler/gem_tasks"
 require "rake/testtask"
+require "queue_classic-later"
 
 task :default => ['test']
 Rake::TestTask.new do |t|

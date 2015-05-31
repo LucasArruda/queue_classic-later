@@ -7,7 +7,6 @@ include QC::Later::QueueExtensions
 class QueueTest < QCTest
 
   def setup
-    QC::Later::Setup.drop
     QC::Later::Setup.create
   end
 
