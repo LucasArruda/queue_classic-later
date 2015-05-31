@@ -1,7 +1,6 @@
 language: ruby
 before_script:
   - psql -c 'create database queue_classic_test;' -U postgres
-  - psql -c 'CREATE TABLE queue_classic_jobs (id bigserial PRIMARY KEY, q_name text not null check (length(q_name) > 0), method text not null check (length(method) > 0), args json, locked_at timestamptz, locked_by integer, created_at timestamptz default now(), scheduled_at timestamptz default now());' -U postgres
 env:
   global:
     - QC_DATABASE_URL="postgres://postgres@localhost/queue_classic_test"
