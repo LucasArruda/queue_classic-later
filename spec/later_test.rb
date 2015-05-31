@@ -8,10 +8,12 @@ class QueueTest < QCTest
 
   def setup
     QC::Later::Setup.create
+    setup
   end
 
   def teardown
     QC::Later::Setup.drop
+    setup
   end
 
   def test_enqueue_in
