@@ -6,6 +6,15 @@ include QC::Later::QueueExtensions
 
 class QueueTest < QCTest
 
+  def setup
+    QC::Later::Setup.drop
+    QC::Later::Setup.create
+  end
+
+  def teardown
+    QC::Later::Setup.drop
+  end
+
   def test_enqueue_in
     time_completed = Time.now + 2
     enqueue_in(1, "Kernel.puts", "hello world 1")
