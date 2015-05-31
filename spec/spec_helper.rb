@@ -10,9 +10,11 @@ class QCTest < Minitest::Test
 
   def setup
     init_db
+    QC::Later::Setup.create
   end
 
   def teardown
+    QC::Later::Setup.drop
     QC.delete_all
   end
 
